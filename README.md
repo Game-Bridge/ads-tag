@@ -4,7 +4,7 @@
 ```
 <script
 	id="ads-tag-sdk"
-	data-zone-id="zone_1"
+	data-zone-id="test"
 	src="https://sdk.enjoy4fun.com/v1/ads-tag.js">
 </script>
 ```
