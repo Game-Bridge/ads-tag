@@ -4,14 +4,16 @@
 ```
 <script
 	id="ads-tag-sdk"
-	data-zone-id="test"
+	data-site-id="site_11"
+	data-zone-id="zone_1"
 	src="https://sdk.enjoy4fun.com/v1/ads-tag.js">
 </script>
 ```
 
 ### 参数说明
 - id: 当前脚本的标识，固定值，必传
-- data-zone-id: 域名唯一标识，由管理人员提供
+- data-site-id: 域名唯一标识，非必传，由管理人员提供
+- data-zone-id: 广告默认单元组，非必传，通过renderAds进行单独配置，由管理人员提供
 - src: sdk地址
 
 ### 渲染广告
@@ -23,6 +25,7 @@
   - dom: 需要渲染广告的html容器
   - width: 指定广告的宽度
   - height: 指定广告的高度
+  - zoneId: 指定广告单元组，如未指定，将使用script的data-zone-id属性做为默认值(使用该参数可以区分广告组收益)
 ```javascript
-	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250);
+	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
