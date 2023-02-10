@@ -29,15 +29,22 @@
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
-### banner广告演示
-####728*90
-
-![image](https://user-images.githubusercontent.com/7828841/218071945-a9386dbd-b9f0-4119-8425-eb005149ee3c.png)
-
-
 
 #### 2.穿插广告
 穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial`方法进行广告渲染。需要注意: **单个页面中仅能调用一次**。
 ```javascript
 window.adsTag.renderInterstitial(zoneId);
 ```
+
+
+### 3.banner广告示例
+#### Pc
+##### Banner	
+![image](https://user-images.githubusercontent.com/7828841/218074243-65867a1f-a5fb-4876-a3af-d5b8d6321112.png)
+##### 穿插
+![image](https://user-images.githubusercontent.com/7828841/218075198-82d9d33c-20ff-4e75-b9b3-d224b0e5e10d.png)
+#### Mobile
+
+#### 728*90
+
+
