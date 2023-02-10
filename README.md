@@ -30,7 +30,8 @@
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
 ### banner广告演示
-主要尺寸：728*90
+####728*90
+
 ![image](https://user-images.githubusercontent.com/7828841/218071945-a9386dbd-b9f0-4119-8425-eb005149ee3c.png)
 
 
