@@ -43,4 +43,4 @@ window.adsTag.renderInterstitial(zoneId);
 ![未命名文件 (1)](https://user-images.githubusercontent.com/7828841/218077274-6a621d56-1d0b-4eac-a0de-6137011c3007.png)
 #### Mobile
 ![mobile-banner](https://user-images.githubusercontent.com/7828841/218080124-8f3284eb-8eeb-4189-84d0-cdb16bb1210c.png)
-![mobile-intestital](https://user-images.githubusercontent.com/7828841/218077714-dd89f81c-6a70-4c2f-8db4-8708c28a5439.png)
+![mobile-intestital (1)](https://user-images.githubusercontent.com/7828841/218080408-e26d1ce0-8166-4bdf-89c1-fd07aac59432.png)
