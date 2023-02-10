@@ -38,13 +38,9 @@ window.adsTag.renderInterstitial(zoneId);
 
 
 ### 3.banner广告示例
-#### Pc
-##### Banner	
-![image](https://user-images.githubusercontent.com/7828841/218074243-65867a1f-a5fb-4876-a3af-d5b8d6321112.png)
-##### 穿插
-![image](https://user-images.githubusercontent.com/7828841/218075198-82d9d33c-20ff-4e75-b9b3-d224b0e5e10d.png)
+#### Pc		
+![pc banner](https://user-images.githubusercontent.com/7828841/218078481-50a198ed-6b62-4be7-b115-24c0e51de63c.png)
+![未命名文件 (1)](https://user-images.githubusercontent.com/7828841/218077274-6a621d56-1d0b-4eac-a0de-6137011c3007.png)
 #### Mobile
-
-#### 728*90
-
-
+![mobile-banner](https://user-images.githubusercontent.com/7828841/218080124-8f3284eb-8eeb-4189-84d0-cdb16bb1210c.png)
+![mobile-intestital](https://user-images.githubusercontent.com/7828841/218077714-dd89f81c-6a70-4c2f-8db4-8708c28a5439.png)
