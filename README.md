@@ -29,6 +29,11 @@
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
+### banner广告演示
+主要尺寸：728*90
+![image](https://user-images.githubusercontent.com/7828841/218071945-a9386dbd-b9f0-4119-8425-eb005149ee3c.png)
+
+
 
 #### 2.穿插广告
 穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial`方法进行广告渲染。需要注意: **单个页面中仅能调用一次**。
