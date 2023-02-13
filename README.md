@@ -31,11 +31,13 @@ window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
 
 #### 2.穿插广告
-穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial`方法进行广告渲染。需要注意: **单个页面中仅能调用一次**。
+穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial`方法进行广告渲染, 参数如下:
+- zoneId: 指定广告单元组，使用该参数可以区分广告组收益
+- querySelector: 指定拥有该选择器的a标签使用穿插广告, 不指定则为全部a标签生效，可以使用className或attribute
 ```javascript
+// 需要注意: **单个页面中仅能调用一次**。
 window.adsTag.renderInterstitial(zoneId);
 ```
-
 
 ### 3.banner广告示例
 #### Pc		
