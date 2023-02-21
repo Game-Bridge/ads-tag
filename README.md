@@ -25,7 +25,6 @@
   - width: 指定广告的宽度
   - height: 指定广告的高度
   - zoneId: 指定广告单元组，使用该参数可以区分广告组收益
-  - videoFirst: 指定当前广告单元组优先展示视频，只要存在可用的视频即进行展示。注意: 单个页面仅能指定一次(单个页面同时只允许一个视频处于展示中)
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
