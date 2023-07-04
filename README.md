@@ -57,7 +57,7 @@ window.adsTag.renderInterstitial(zoneId);
 - 该方法调用后，仅对页面中的a标签跳转生效
 - 单个页面中仅能调用一次，多次调用无效
 
-#### 三. 锚定广告 `beta`
+#### 三. 锚定广告
 锚定广告不需要创建容器，通过调用`window.adsTag.renderAnchor(zoneId, type)`方法进行广告渲染
 
 ##### 参数说明:
@@ -74,7 +74,7 @@ window.adsTag.renderAnchor(zoneId, 'bottom');
 ##### 注意事项:
 - 单个页面中仅能调用一次，多次调用无效
 
-#### 四. 激励广告 `beta`
+#### 四. 激励广告
 激励广告不需要创建容器，通过调用`window.adsTag.renderReward(zoneId, doneFn)`方法进行广告渲染
 
 ##### 参数说明:
@@ -96,6 +96,27 @@ window.adsTag.renderReward(zoneId, (rewardedStatus) => {
 
 ##### 注意事项:
 - 激励广告可能展示视频广告，建议在用户产生页面交互之后再调用该方法
+
+#### 五. 插屏广告
+插屏广告不需要创建容器，通过调用`window.adsTag.adBreak({ zoneId, type, adBreakDone })`方法进行广告渲染
+
+##### 参数说明:
+| 参数      | 类型          | 说明                                    | 是否必传 | 默认值                      |
+|---------|-------------|---------------------------------------|------|--------------------------|
+| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益                | 是    | --                       |
+| type  | string      | 指定广告类型，可传参数: preroll, midroll, reward | 是    | --                       |
+| adBreakDone  | function | 插屏广告失败或完成播放后执行函数，参数`viewed`返回广告的展示状态  | 否    | (viewed) => {} |
+
+##### 示例:
+```javascript
+window.adsTag.adBreak({ zoneId: 'xxx', type: 'midroll', adBreakDone: (viewed) => {
+    if (viewed) {
+        // 广告成功展示
+	} else {
+        // 广告展示失败，或由用户中止
+	}
+}});
+```
 
 ### 广告效果示例
 #### Display Pc		
