@@ -45,8 +45,6 @@ window.adsTag.init({
 |---------|--------|-------------------------------------------------------|-----|
 | id  | string | 当前脚本的标识，固定值为: `ads-tag-sdk`                           | 是   |
 | data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
-| data-user-id  | string | 用户唯一标识，由开发者传入                                   | 否   |
-| data-title  | string | 页面标题，由开发者传入                                         | 否    |
 | src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
 
 ### 渲染广告
