@@ -1,5 +1,5 @@
 # 广告标签管理
-## 引入方式
+## 引入
 > 首先，需要在head区域引入adsTag脚本
 ```
 <script>
@@ -12,7 +12,7 @@
 </script>
 ```
 
-## 调用方式
+## 使用
 ### 直接调用
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
