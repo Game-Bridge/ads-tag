@@ -2,11 +2,41 @@
 ## 引入方式
 > 首先，需要在head区域引入adsTag脚本
 ```
+<script>
+	window.adsTag = window.adsTag || { cmd: [] };
+</script>
 <script
 	id="ads-tag-sdk"
 	data-site-id="site_11"
 	src="https://sdk.enjoy4fun.com/v1/ads-tag.js">
 </script>
+```
+
+## 调用方式
+### 直接调用
+```javascript
+window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
+```
+### 使用`cmd`调用
+如果在使用时不能确认adsTag是否已加载，那么推荐使用`cmd`方式进行调用。
+```javascript
+window.adsTag.cmd(function (){
+	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
+});
+```
+
+### 初始化
+```javascript
+window.adsTag.init({
+	// 是否启用固定宽度, 默认为false，建议使用默认值以达到更高的收益
+	fixedWidth: true,
+	
+	// 广告展示或刷新前事件: 返回是否展示本次广告, 非必传
+	refreshBefore: () => {
+		// 执行需要在广告展示前的代码
+		return true;
+	}
+});
 ```
 
 ### 参数说明
