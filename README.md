@@ -1,6 +1,6 @@
-# 广告标签管理
-## 引入
-> 首先，需要在head区域引入adsTag脚本
+# ads Tag Label Management
+## Input Method
+> First, the adsTag script needs to be input in the head area
 ```
 <script>
 	window.adsTag = window.adsTag || { cmd: [] };
@@ -12,144 +12,144 @@
 </script>
 ```
 
-## 使用
-### 直接调用
+## Use
+### Direct call
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
-### 使用`cmd`调用
-如果在使用时不能确认adsTag是否已加载，那么推荐使用`cmd`方式进行调用。
+### Call with `cmd`
+If you can’t confirm if adsTag is loaded while using, then it is recommended to call with cmd.
 ```javascript
 window.adsTag.cmd(function (){
 	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 });
 ```
 
-### 初始化
+### Initialization
 ```javascript
 window.adsTag.init({
-	// 是否启用固定宽度, 默认为false，建议使用默认值以达到更高的收益
+	// Whether to enable fixed width, false as the default, it is recommended to use the default value to achieve higher benefits
 	fixedWidth: true,
 	
-	// 广告展示或刷新前事件: 返回是否展示本次广告, 非必传
+	// Ads Display or Refresh Event: Return to whether display ads this time, not prerequisite execution
 	refreshBefore: () => {
-		// 执行需要在广告展示前的代码
+		// Execute the needed code before ads display
 		return true;
 	}
 });
 ```
 
-### 参数说明
+### Parameter Description
 
-| 参数      | 类型     | 说明                                                    | 是否必传 |
-|---------|--------|-------------------------------------------------------|-----|
-| id  | string | 当前脚本的标识，固定值为: `ads-tag-sdk`                           | 是   |
-| data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
-| src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
+| Parameters   | Type   | Description                                                          | Prerequisite or not |
+|--------------|--------|----------------------------------------------------------------------|---------------------|
+| id           | string | The tag of the current script, fixed value: `ads-tag-sdk`            | Yes                 |
+| data-site-id | string | The unique domain name identification, provided by the administrator | Yes                 |
+| src          | string | sdk address, fixed value: `https://sdk.enjoy4fun.com/v1/ads-tag.js`  | Yes                 |
 
-### 渲染广告
-#### 一. Display广告
-- 1.通过绑定id或其它属性标识，将某个dom节点指定为`renderAds`所需的广告容器
+### Render ads
+#### I. Display ads
+- 1.Designate a dom node as the ad container for renderAds by binding an id or other attribute identifier.
 ```html
 <div id="test-one"></div>
 ```
-- 2.使用`window.adsTag.renderAds(dom, width, height, zoneId)`进行广告渲染
+- 2.Use`window.adsTag.renderAds(dom, width, height, zoneId)`to render the ads
 
-##### 参数说明:
-| 参数      | 类型          | 说明                                                   | 是否必传 | 默认值  |
-|---------|-------------|------------------------------------------------------|---|------|
-| dom     | HtmlElement | 需要渲染广告的容器, 良好的体验需要该容器的宽高大于或等于参数`width`,`height`所设置的值 | 是 | --   |
-| width   | number      | 指定广告的宽度                                              | 是 | --   |
-| height   | number      | 指定广告的高度                                              | 是 | --   |
-| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益                               | 是 | --   |
+##### Parameter Description
+| Parameters | Type        | Description                                                                                                                                                                                               | Mandatory or not | Default Value |
+|------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|---------------|
+| dom        | HtmlElement | Need the container in which the ads are rendered, for a good experience the `width` and `height` of the container should be bigger than or equal to the values set by the parameters of width and height. | Yes              | --            |
+| width      | number      | Specify the width of the ads                                                                                                                                                                              | Yes              | --            |
+| height     | number      | Specify the height of the ads                                                                                                                                                                             | Yes              | --            |
+| zoneId     | string      | Specify the ad unit group, use this parameter to differentiate the ad group revenue                                                                                                                       | Yes              | --            |
 
-##### 示例:
+##### Example
 ```javascript
 window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
 
 
-#### 二. 穿插广告
-穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial(zoneId, querySelector)`方法进行广告渲染
+#### II. Inserted ads
+Inserting ads don’t need to create a container, the ads are rendered by calling `window.adsTag.renderInterstitial(zoneId, querySelector)`method
 
-##### 参数说明:
-| 参数      | 类型          | 说明                                                                                          | 是否必传 | 默认值 |
-|---------|-------------|---------------------------------------------------------------------------------------------|------|-----|
-| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益                                                                      | 是    | --  |
-| querySelector  | string      | 指定匹配该选择器的a标签使用穿插广告, 参数为空时全部`a`标签都会生效。选择器建议使用`className`或`attribute`，并注意保证不存在阻挡`href`跳转的事件 | 否    | -- |
+##### Parameter Description
+| Parameters    | Type   | Description                                                                                                                                                                                                                                                                         | Mandatory or not | Default Value |
+|---------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|---------------|
+| zoneId        | string | Specify the ad unit group, use this parameter to differentiate the ad group revenue                                                                                                                                                                                                 | Yes              | --            |
+| querySelector | string | Specifies that the `a` tags matching this selector should use interstitial ads, when the parameter is empty, all a tags will take effect. Selectors are recommended to use `className` or `attribute`, and care is taken to ensure that there are no events that block `href` jumps | No               | --            |
 
-##### 示例:
+##### Example
 ```javascript
 window.adsTag.renderInterstitial(zoneId);
 ```
 
-##### 注意事项: 
-- 该方法调用后，仅对页面中的a标签跳转生效
-- 单个页面中仅能调用一次，多次调用无效
+##### Caution
+- When this method is called, it only takes effect on the a tag jump in the page
+- Can only be called once in a single page, multiple calls are invalid
 
-#### 三. 锚定广告
-锚定广告不需要创建容器，通过调用`window.adsTag.renderAnchor(zoneId, type)`方法进行广告渲染
+#### III. anchored adS
+Anchor ads don't need to create a container, ads are rendered by calling `window.adsTag.renderAnchor(zoneId, type)` method
 
-##### 参数说明:
-| 参数      | 类型          | 说明                                                        | 是否必传 | 默认值      |
-|---------|-------------|-----------------------------------------------------------|------|----------|
-| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益  | 是    | --       |
-| type  | string      | 锚定广告的位置，可选值: 'top', 'bottom' | 否    | 'bottom' |
+##### Parameter Description
+| Parameters | Type   | Description                                                                         | Mandatory or not | Default Value |
+|------------|--------|-------------------------------------------------------------------------------------|------------------|---------------|
+| zoneId     | string | Specify the ad unit group, use this parameter to differentiate the ad group revenue | Yes              | --            |
+| type       | string | Position of the anchored ad, optional values: 'top', 'bottom'                       | No               | 'bottom'      |
 
-##### 示例:
+##### Example
 ```javascript
 window.adsTag.renderAnchor(zoneId, 'bottom');
 ```
 
-##### 注意事项:
-- 单个页面中仅能调用一次，多次调用无效
+##### Caution
+- Can only be called once in a single page, multiple calls are invalid
 
-#### 四. 激励广告
-激励广告不需要创建容器，通过调用`window.adsTag.renderReward(zoneId, doneFn)`方法进行广告渲染
+#### IV. incentive advertising
+Incentivized ads don't need to create a container, ads are rendered by calling `window.adsTag.renderReward(zoneId, doneFn)` method
 
-##### 参数说明:
-| 参数      | 类型          | 说明                                                        | 是否必传 | 默认值      |
-|---------|-------------|-----------------------------------------------------------|------|----------|
-| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益  | 是    | --       |
-| doneFn  | function | 激励广告完成执行函数，参数`rewardStatus`返回激励广告的展示状态 | 否    | (rewardStatus) => {} |
+##### Parameter Description
+| Parameters | Type     | Description                                                                                                              | Mandatory or not | Default Value        |
+|------------|----------|--------------------------------------------------------------------------------------------------------------------------|------------------|----------------------|
+| zoneId     | string   | Specify the ad unit group, use this parameter to differentiate the ad group revenue                                      | Yes              | --                   |
+| doneFn     | function | Incentive ad completion execution function, the parameter `rewardStatus` returns the display status of the incentive ad. | No               | (rewardStatus) => {} |
 
-##### 示例:
+##### Example
 ```javascript
 window.adsTag.renderReward(zoneId, (rewardedStatus) => {
     if (rewardedStatus) {
-	// 执行激励广告展示完成后操作
+	// Execute the incentive ad display after completion of the operation
 	} else {
-        // 执行激励广告展示未完成操作
+        // Perform Incentive Ad Display Not Completed Action
 	}
 });
 ```
 
-##### 注意事项:
-- 激励广告可能展示视频广告，建议在用户产生页面交互之后再调用该方法
+##### Caution
+- Incentivized ads may display video ads, it is recommended to call this method after the user has generated a page interaction
 
-#### 五. 插屏广告
-插屏广告不需要创建容器，通过调用`window.adsTag.adBreak({ zoneId, type, adBreakDone })`方法进行广告渲染
+#### V. splash screen adS
+Inserted screen ads don't need to create a container, ads are rendered by calling `window.adsTag.adBreak({ zoneId, type, adBreakDone })` method
 
-##### 参数说明:
-| 参数      | 类型          | 说明                                    | 是否必传 | 默认值                      |
-|---------|-------------|---------------------------------------|------|--------------------------|
-| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益                | 是    | --                       |
-| type  | string      | 指定广告类型，可传参数: preroll, midroll, reward | 是    | --                       |
-| adBreakDone  | function | 插屏广告失败或完成播放后执行函数，参数`viewed`返回广告的展示状态  | 否    | (viewed) => {} |
+##### Parameter Description
+| Parameters  | Type     | Description                                                                                                                                             | Mandatory or not | Default Value  |
+|-------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|----------------|
+| zoneId      | string   | Specify the ad unit group, use this parameter to differentiate the ad group revenue                                                                     | Yes              | --             |
+| type        | string   | Specify the type of ad, passable parameters: preroll, midroll, reward                                                                                   | Yes              | --             |
+| adBreakDone | function | The function is executed after the advertisement fails or finishes playing, and the parameter `viewed` returns the display status of the advertisement. | No               | (viewed) => {} |
 
-##### 示例:
+##### Example
 ```javascript
 window.adsTag.adBreak({ zoneId: 'xxx', type: 'midroll', adBreakDone: (viewed) => {
     if (viewed) {
-        // 广告成功展示
+        // Ads Display Successfully
 	} else {
-        // 广告展示失败，或由用户中止
+        // Failure to display ads, or aborted by the user
 	}
 }});
 ```
 
-### 广告效果示例
-#### Display Pc		
+### Example of Ads Effect
+#### Display Pc
 ![pc banner](https://user-images.githubusercontent.com/7828841/218078481-50a198ed-6b62-4be7-b115-24c0e51de63c.png)
 ![未命名文件 (1)](https://user-images.githubusercontent.com/7828841/218077274-6a621d56-1d0b-4eac-a0de-6137011c3007.png)
 #### Display Mobile
