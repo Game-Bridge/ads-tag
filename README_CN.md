@@ -20,7 +20,7 @@ window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ### 使用`cmd`调用
 如果在使用时不能确认adsTag是否已加载，那么推荐使用`cmd`方式进行调用。
 ```javascript
-window.adsTag.cmd(function (){
+window.adsTag.cmd.push(function (){
 	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 });
 ```
