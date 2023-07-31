@@ -20,7 +20,7 @@ window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ### Call with `cmd`
 If you can’t confirm if adsTag is loaded while using, then it is recommended to call with cmd.
 ```javascript
-window.adsTag.cmd(function (){
+window.adsTag.cmd.push(function (){
 	window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 });
 ```
