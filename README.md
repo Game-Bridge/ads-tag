@@ -45,6 +45,7 @@ window.adsTag.init({
 |--------------|--------|----------------------------------------------------------------------|---------------------|
 | id           | string | The tag of the current script, fixed value: `ads-tag-sdk`            | Yes                 |
 | data-site-id | string | The unique domain name identification, provided by the administrator | Yes                 |
+| data-utm-source  | string | channel ID, its weight factor is higher than utm-source of url parameter.   | No    |
 | src          | string | sdk address, fixed value: `https://sdk.enjoy4fun.com/v1/ads-tag.js`  | Yes                 |
 
 ### Render ads
