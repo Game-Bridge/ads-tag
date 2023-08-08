@@ -13,6 +13,15 @@
 </script>
 ```
 
+### 参数说明
+
+| 参数      | 类型     | 说明                                                    | 是否必传 |
+|---------|--------|-------------------------------------------------------|-----|
+| id  | string | 当前脚本的标识，固定值为: `ads-tag-sdk`                           | 是   |
+| data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
+| data-utm-source  | string | 渠道ID,权重高于url参数中的utm_source                            | 否    |
+| src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
+
 ## 使用
 ### 直接调用
 ```javascript
@@ -39,15 +48,6 @@ window.adsTag.init({
 	}
 });
 ```
-
-### 参数说明
-
-| 参数      | 类型     | 说明                                                    | 是否必传 |
-|---------|--------|-------------------------------------------------------|-----|
-| id  | string | 当前脚本的标识，固定值为: `ads-tag-sdk`                           | 是   |
-| data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
-| data-utm-source  | string | 渠道ID,权重高于url参数中的utm_source                            | 否    |
-| src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
 
 ### 渲染广告
 #### 一. Display广告
