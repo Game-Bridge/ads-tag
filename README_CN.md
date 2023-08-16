@@ -50,7 +50,7 @@ window.adsTag.init({
 ```
 
 ### 渲染广告
-#### 一. Display广告
+#### 一. Display广告 `zoneType: Display`
 - 1.通过绑定id或其它属性标识，将某个dom节点指定为`renderAds`所需的广告容器
 ```html
 <div id="test-one"></div>
@@ -71,7 +71,7 @@ window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
 
 
-#### 二. 穿插广告
+#### 二. 穿插广告 `zoneType: WebInterstitial`
 穿插广告不需要创建容器，通过调用`window.adsTag.renderInterstitial(zoneId, querySelector)`方法进行广告渲染
 
 ##### 参数说明:
@@ -89,7 +89,7 @@ window.adsTag.renderInterstitial(zoneId);
 - 该方法调用后，仅对页面中的a标签跳转生效
 - 单个页面中仅能调用一次，多次调用无效
 
-#### 三. 锚定广告
+#### 三. 锚定广告 `zoneType: Anchor`
 锚定广告不需要创建容器，通过调用`window.adsTag.renderAnchor(zoneId, type)`方法进行广告渲染
 
 ##### 参数说明:
@@ -106,7 +106,7 @@ window.adsTag.renderAnchor(zoneId, 'bottom');
 ##### 注意事项:
 - 单个页面中仅能调用一次，多次调用无效
 
-#### 四. 激励广告
+#### 四. 激励广告 `zoneType: Reward`
 激励广告不需要创建容器，通过调用`window.adsTag.renderReward(zoneId, doneFn)`方法进行广告渲染
 
 ##### 参数说明:
@@ -129,7 +129,7 @@ window.adsTag.renderReward(zoneId, (rewardedStatus) => {
 ##### 注意事项:
 - 激励广告可能展示视频广告，建议在用户产生页面交互之后再调用该方法
 
-#### 五. 插屏广告
+#### 五. 插屏广告 `zoneType: Interstitial`
 插屏广告不需要创建容器，通过调用`window.adsTag.adBreak({ zoneId, type, adBreakDone })`方法进行广告渲染
 
 ##### 参数说明:
