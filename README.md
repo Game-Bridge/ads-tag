@@ -49,7 +49,7 @@ window.adsTag.init({
 ```
 
 ### Render ads
-#### I. Display ads
+#### I. Display Ads `zoneType: Display`
 - 1.Designate a dom node as the ad container for renderAds by binding an id or other attribute identifier.
 ```html
 <div id="test-one"></div>
@@ -70,7 +70,7 @@ window.adsTag.renderAds(document.querySelector('#test-one'), 300, 250, zoneId);
 ```
 
 
-#### II. Inserted ads
+#### II. WebInterstitial Ads `zoneType: WebInterstitial`
 Inserting ads don’t need to create a container, the ads are rendered by calling `window.adsTag.renderInterstitial(zoneId, querySelector)`method
 
 ##### Parameter Description
@@ -88,7 +88,7 @@ window.adsTag.renderInterstitial(zoneId);
 - When this method is called, it only takes effect on the a tag jump in the page
 - Can only be called once in a single page, multiple calls are invalid
 
-#### III. anchored adS
+#### III. Anchor Ads `zoneType: Anchor`
 Anchor ads don't need to create a container, ads are rendered by calling `window.adsTag.renderAnchor(zoneId, type)` method
 
 ##### Parameter Description
@@ -105,7 +105,7 @@ window.adsTag.renderAnchor(zoneId, 'bottom');
 ##### Caution
 - Can only be called once in a single page, multiple calls are invalid
 
-#### IV. incentive advertising
+#### IV. Reward Ads `zoneType: Reward`
 Incentivized ads don't need to create a container, ads are rendered by calling `window.adsTag.renderReward(zoneId, doneFn)` method
 
 ##### Parameter Description
@@ -128,7 +128,7 @@ window.adsTag.renderReward(zoneId, (rewardedStatus) => {
 ##### Caution
 - Incentivized ads may display video ads, it is recommended to call this method after the user has generated a page interaction
 
-#### V. splash screen adS
+#### V. Interstitial Ads `zoneType: Interstitial`
 Inserted screen ads don't need to create a container, ads are rendered by calling `window.adsTag.adBreak({ zoneId, type, adBreakDone })` method
 
 ##### Parameter Description
