@@ -38,13 +38,7 @@ window.adsTag.cmd.push(function (){
 ```javascript
 window.adsTag.init({
 	// Whether to enable fixed width, false as the default, it is recommended to use the default value to achieve higher benefits
-	fixedWidth: true,
-	
-	// Ads Display or Refresh Event: Return to whether display ads this time, not prerequisite execution
-	refreshBefore: () => {
-		// Execute the needed code before ads display
-		return true;
-	}
+	fixedWidth: true
 });
 ```
 
