@@ -39,13 +39,7 @@ window.adsTag.cmd.push(function (){
 ```javascript
 window.adsTag.init({
 	// 是否启用固定宽度, 默认为false，建议使用默认值以达到更高的收益
-	fixedWidth: true,
-	
-	// 广告展示或刷新前事件: 返回是否展示本次广告, 非必传
-	refreshBefore: () => {
-		// 执行需要在广告展示前的代码
-		return true;
-	}
+	fixedWidth: true
 });
 ```
 
