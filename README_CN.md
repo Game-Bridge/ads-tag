@@ -16,10 +16,11 @@
 ### 参数说明
 
 | 参数      | 类型     | 说明                                                    | 是否必传 |
-|---------|--------|-------------------------------------------------------|-----|
+|-----------------|--------|------------------------------------------------------|------|
 | id  | string | 当前脚本的标识，固定值为: `ads-tag-sdk`                           | 是   |
 | data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
 | data-utm-source  | string | 渠道ID,权重高于url参数中的utm_source                            | 否    |
+| data-test       | string | 是否启用测试模式, 当值为`on`时将开启测试模式。特别注意，在正式环境中切勿使用!           | 否    |
 | src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
 
 ## 使用
@@ -142,6 +143,32 @@ window.adsTag.adBreak({ zoneId: 'xxx', type: 'midroll', adBreakDone: (viewed) =>
         // 广告展示失败，或由用户中止
 	}
 }});
+```
+
+#### 六. 对联广告 `zoneType: Sidewall`
+对联广告不需要创建容器, 通过调用`window.adsTag.renderSidewall(zoneId)`方法进行广告渲染
+##### 参数说明:
+| 参数      | 类型          | 说明                                    | 是否必传 | 默认值                      |
+|---------|-------------|---------------------------------------|------|--------------------------|
+| zoneId  | string      | 指定广告单元组，使用该参数可以区分广告组收益                | 是    | --                       |
+
+##### 示例:
+```javascript
+window.adsTag.renderSidewall(zoneId);
+```
+
+#### 七. 底部定位广告 `zoneType: Fixed`
+底部定位广告不需要创建容器, 通过调用`window.adsTag.renderFixed(zoneId, width, height)`方法进行广告渲染
+
+##### 参数说明:
+| 参数     | 类型      | 说明                                 | 是否必传 | 默认值 |
+|--------|---------|------------------------------------|------|-----|
+| zoneId | string  | 指定广告单元组，使用该参数可以区分广告组收益             | 是    | --  |
+| width  | number  | 指定广告宽度,需要根据网站实际布局调整                | 否    | 300 |
+| height | number  | 指定广告高度,需要根据网站实际布局调整                | 否    | 250 |
+##### 示例:
+```javascript
+window.adsTag.renderFixed(zoneId);
 ```
 
 ### 广告效果示例
