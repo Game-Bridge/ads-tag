@@ -19,6 +19,7 @@
 | id           | string | The tag of the current script, fixed value: `ads-tag-sdk`            | Yes                 |
 | data-site-id | string | The unique domain name identification, provided by the administrator | Yes                 |
 | data-utm-source  | string | channel ID, its weight factor is higher than utm-source of url parameter.   | No    |
+| data-test       | string | Enable Test Mode or Not: Test Mode will be opened when value=on. Caution! Do not use it in Production Environment.           | No    |
 | src          | string | sdk address, fixed value: `https://sdk.enjoy4fun.com/v1/ads-tag.js`  | Yes                 |
 
 ## Use
@@ -142,6 +143,33 @@ window.adsTag.adBreak({ zoneId: 'xxx', type: 'midroll', adBreakDone: (viewed) =>
 	}
 }});
 ```
+
+#### Ⅵ. Sidewall Ads `zoneType: Sidewall`
+Sidewall Ads do not need create container. Render it through the instruction from “window.adsTag.renderSidewall(zoneId)”.
+##### Parameter Description:
+| Parameters | Type   | Description                                                                         | Mandatory or not | Default Value |
+|---------|-------------|---------------------------------------|------|--------------------------|
+| zoneId  | string      | Specify the ad unit group, use this parameter to differentiate the ad group revenue               | Yes    | --                       |
+
+##### Example:
+```javascript
+window.adsTag.renderSidewall(zoneId);
+```
+
+#### Ⅶ. Fixed Ads `zoneType: Fixed`
+Fixed Ads do not need create container. Render it through the instruction from “window.adsTag.renderFixed(zoneId, width, heigth)”.
+
+##### Parameter Description:
+| Parameters | Type   | Description                                                                         | Mandatory or not | Default Value |
+|--------|---------|------------------------------------|------|-----|
+| zoneId | string  | Specify the ad unit group, use this parameter to differentiate the ad group revenue             | Yes    | --  |
+| width  | number  | Specify Ads Width. Adjust it according to the actual layout of Web.                | No    | 300 |
+| height | number  | Specify Ads Height. Adjust it according to the actual layout of Web.                | No    | 250 |
+##### Example:
+```javascript
+window.adsTag.renderFixed(zoneId);
+```
+
 
 ### Example of Ads Effect
 #### Display Pc
