@@ -172,9 +172,12 @@ window.adsTag.renderFixed(zoneId);
 
 
 ### Example of Ads Effect
-#### Display Pc
-![pc banner](https://user-images.githubusercontent.com/7828841/218078481-50a198ed-6b62-4be7-b115-24c0e51de63c.png)
-![未命名文件 (1)](https://user-images.githubusercontent.com/7828841/218077274-6a621d56-1d0b-4eac-a0de-6137011c3007.png)
-#### Display Mobile
-![mobile-banner](https://user-images.githubusercontent.com/7828841/218080124-8f3284eb-8eeb-4189-84d0-cdb16bb1210c.png)
-![mobile-intestital (1)](https://user-images.githubusercontent.com/7828841/218080408-e26d1ce0-8166-4bdf-89c1-fd07aac59432.png)
+#### PC Banner
+![pc banner](https://github.com/Game-Bridge/ads-tag/assets/11342827/2a6037fc-ed1a-4485-bbf2-03eb351b421e)
+
+#### PC Interstitial
+![pc interstitial](https://github.com/Game-Bridge/ads-tag/assets/11342827/1d581fe1-add1-41fa-9a92-e571d93b3075)
+
+#### Mobile
+![mobile](https://github.com/Game-Bridge/ads-tag/assets/11342827/68f20d89-eaa9-498f-933d-7159b56c96c2)
+
