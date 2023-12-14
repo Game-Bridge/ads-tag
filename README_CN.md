@@ -9,7 +9,7 @@
 	id="ads-tag-sdk"
 	data-site-id="site_11"
 	data-utm-source="channel-id"
-	src="https://sdk.enjoy4fun.com/v1/ads-tag.js">
+	src="https://sdk.beesads.com/v1/ads-tag.js">
 </script>
 ```
 
@@ -21,7 +21,7 @@
 | data-site-id  | string | 域名唯一标识，由管理人员提供                                        | 是   |
 | data-utm-source  | string | 渠道ID,权重高于url参数中的utm_source                            | 否    |
 | data-test       | string | 是否启用测试模式, 当值为`on`时将开启测试模式。特别注意，在正式环境中切勿使用!           | 否    |
-| src  | string | sdk地址，固定值为: `https://sdk.enjoy4fun.com/v1/ads-tag.js` | 是   |
+| src  | string | sdk地址，固定值为: `https://sdk.beesads.com/v1/ads-tag.js` | 是   |
 
 ## 使用
 ### 直接调用
