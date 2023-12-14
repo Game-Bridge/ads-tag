@@ -8,7 +8,7 @@
 <script
 	id="ads-tag-sdk"
 	data-site-id="site_11"
-	src="https://sdk.enjoy4fun.com/v1/ads-tag.js">
+	src="https://sdk.beesads.com/v1/ads-tag.js">
 </script>
 ```
 
@@ -20,7 +20,7 @@
 | data-site-id | string | The unique domain name identification, provided by the administrator | Yes                 |
 | data-utm-source  | string | channel ID, its weight factor is higher than utm-source of url parameter.   | No    |
 | data-test       | string | Enable Test Mode or Not: Test Mode will be opened when value=on. Caution! Do not use it in Production Environment.           | No    |
-| src          | string | sdk address, fixed value: `https://sdk.enjoy4fun.com/v1/ads-tag.js`  | Yes                 |
+| src          | string | sdk address, fixed value: `https://sdk.beesads.com/v1/ads-tag.js`  | Yes                 |
 
 ## Use
 ### Direct call
